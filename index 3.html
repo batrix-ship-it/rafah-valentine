@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Batric ❤️ Rafah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+.minion {
+    width: 250px;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+}
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+#noBtn {
+    background: #333;
+    color: white;
+    position: absolute;
+}
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+</audio>
+
+<div class="container">
+<img class="minion" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif">
+<h1>Rafah Amira K, will you be my Valentine? ❤️</h1>
+<h3>— Batric Geo N</h3>
+
+<button id="yesBtn">Yes ❤️</button>
+<button id="noBtn">Think Again 😏</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const phrases = ["Think Again 😏","Are you sure? 🥺","Really sure? 😬","You can't escape love 😈"];
+let i=0;
+
+function move(){
+let x=Math.random()*(window.innerWidth-100);
+let y=Math.random()*(window.innerHeight-50);
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+i=(i+1)%phrases.length;
+noBtn.innerText=phrases[i];
+}
+
+noBtn.onmouseover=move;
+noBtn.onclick=move;
+
+document.getElementById("yesBtn").onclick=function(){
+document.body.innerHTML=`
+<div style="text-align:center;color:white;">
+<h1>You can't escape love Rafah 😈❤️</h1>
+<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="300">
+<h2>Forever yours — Batric Geo N</h2>
+</div>`;
+};
+</script>
+
+</body>
+</html>
